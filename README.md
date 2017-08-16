@@ -32,7 +32,7 @@ A Console Div has afew optional attributes:
 Now we will prepare the script file. It must be a completly seperate .js file and must look like this:
 
 ```javascript
-  var console1 = {
+  var [THE NAME OF THE FILE WITHOUT EXTENSION HERE] = {
 	main: function(C){
 		//YOUR CODE HERE
 	}
@@ -54,3 +54,46 @@ In the script file where it says `//YOUR CODE HERE` you will see right above it 
 | Beep      | none              | Will beep                           |
 
 For example `C.WriteLine("Hello World")` will print hello world. All your code and logic should take place within the script files as external interaction is not ~~tested~~ reccomended.
+
+## Conclusion
+By the time you're done, you should have something like:
+
+html:
+```html
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Console Test</title>
+</head>
+
+<body>
+	<script src="console.js"></script>
+	<script src="js/console1.js"></script>
+	
+	<div isConsole console-Script="js/console1.js" console-Forecolor="#ffffff" style="width:300px; height:300px;"></div>
+	
+</body>
+</html>
+```
+
+js:
+```javascript
+var console1 = {
+	main: function(C){
+		var a;
+		var b;
+		
+		C.WriteLine("First:");
+		C.ReadLine(function(e){
+			a = parseInt(e);
+			C.WriteLine("Second:");
+			C.ReadLine(function(e){
+				b = parseInt(e);
+				C.WriteLine("Sum = " + (a + b));
+			});
+		});
+	}
+};
+```
