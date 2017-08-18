@@ -5,7 +5,7 @@ This simple script will allow you to create terminal-esq interfaces on your webp
 
 [Link](examples/testbed.html) WIP*
 
-*^not ^really ^I ^mean ^who ^am ^I ^kidding
+*not really I mean who am I kidding
 
 ## Implementation
 
