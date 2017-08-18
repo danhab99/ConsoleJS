@@ -1,6 +1,12 @@
 # ConsoleJS : The lazy man's UI
 This simple script will allow you to create terminal-esq interfaces on your webpage. It's not really good at it's job, but I made this because sometimes I make a javascript that dose some work that dosen't require user interface.
 
+## Demostration
+
+[Link](examples/testbed.html) WIP*
+
+*^not ^really ^I ^mean ^who ^am ^I ^kidding
+
 ## Implementation
 
 ### Step: 1
