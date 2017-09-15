@@ -27,6 +27,7 @@ A Console Div has afew optional attributes:
 | console-Backcolor | Sets the background        | #000000 |
 | console-FontSize  | Sets the font size         | 12      |
 | console-Font      | Sets the font family used  | Verdana |
+| console-Limit     | Defines a maximum number of lines allowed on a console | -1 (limitless) |
 
 ### Step: 3
 Now we will prepare the script file. It must be a completly seperate .js file and must look like this:
