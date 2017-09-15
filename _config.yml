@@ -1,1 +1,11 @@
 theme: jekyll-theme-minimal
+description: This simple script will allow you to create terminal-esq interfaces on your webpage. It's not really good at it's job, but I made this because sometimes I make a javascript that dose some work that dosen't require user interface.
+author:
+	name: Dan Habot
+	picture: https://danhab99.github.io/assets/favicon.ico
+	
+author_email: dan.habot@gmail.com
+title: ConsoleJS
+twitter_username: danhab99
+github_username: danhab99
+logo: //danhab99.github.io/assets/favicon.ico
