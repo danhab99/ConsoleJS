@@ -11,18 +11,24 @@ This simple script will allow you to create terminal-esq interfaces on your webp
 
 ### Step: 1
 Add this tag where the rest of your script tags are
+<<<<<<< HEAD
 
 ```html
 	<script src="https://rawgit.com/danhab99/ConsoleJS/master/console.js"></script>
 ```
+=======
+```<script src="https://rawgit.com/danhab99/ConsoleJS/master/console.min.js"></script>```
+>>>>>>> origin
 
 ### Step: 2
-Add an `isConsole` attribute to the `div` you want to make a console. **THIS WILL ONLY WORK ON `DIV`S***.
+Add an `isConsole` attribute to the `div` you want to make a console. **THIS WILL ONLY WORK ON `div`S***.
 
 ### Step: 2.1
 Include the console's script file in your group of script tags. Like so:
 
-```<script src="js/console1.js"></script>```
+```html
+<script src="https://rawgit.com/danhab99/ConsoleJS/master/console.min.js"></script>
+```
 
 Then set the Console Div's `console-Script` attribute to the same source as the previous script tag. This will make this Console Div run this script. Don't worry, we'll prepare the script in a moment.
 
@@ -30,12 +36,13 @@ Then set the Console Div's `console-Script` attribute to the same source as the 
 
 A Console Div has afew optional attributes:
 
-| Attribute         | Description                | Default |
-|-------------------|----------------------------|---------|
-| console-Forecolor | Sets the color of the text | #ffffff |
-| console-Backcolor | Sets the background        | #000000 |
-| console-FontSize  | Sets the font size         | 12      |
-| console-Font      | Sets the font family used  | Verdana |
+| Attribute         | Description                                            | Default        |
+|-------------------|--------------------------------------------------------|----------------|
+| console-Forecolor | Sets the color of the text                             | #ffffff        |
+| console-Backcolor | Sets the background                                    | #000000        |
+| console-FontSize  | Sets the font size                                     | 12             |
+| console-Font      | Sets the font family used                              | Verdana        |
+| console-Limit     | Defines a maximum number of lines allowed on a console | -1 (limitless) |
 
 ### Step: 3
 Now we will prepare the script file. It must be a completly seperate .js file and must look like this:
@@ -78,7 +85,7 @@ html:
 </head>
 
 <body>
-	<script src="console.js"></script>
+	<script src="https://rawgit.com/danhab99/ConsoleJS/master/console.min.js"></script>
 	<script src="js/console1.js"></script>
 	
 	<div isConsole console-Script="js/console1.js" console-Forecolor="#ffffff" style="width:300px; height:300px;"></div>

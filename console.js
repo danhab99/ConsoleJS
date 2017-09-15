@@ -19,20 +19,22 @@ window.onload = function(){
 		var bc = e.getAttribute('console-Backcolor');
 		var fs = e.getAttribute('console-FontSize');
 		var f = e.getAttribute('console-Font');
+		var l = e.getAttribute('console-Limit');
 		
 		var t = s.split("/");
 		var tt = t[t.length - 1].split(".")[0];
 		var ns = eval(tt);
 		
-		ns.main(new Console(e, tt, fc, bc, fs));
+		ns.main(new Console(e, tt, fc, bc, fs, f, l));
 	}
 };
 
-function Console(element, name, forecolor, backcolor, fontsize, font){
+function Console(element, name, forecolor, backcolor, fontsize, font, limit){
 	forecolor = forecolor || "#ffffff";
 	backcolor = backcolor || "#000000";
 	fontsize = fontsize || 12;
 	font = font || "Verdana";
+	limit = limit || -1;
 	
 	element.style.backgroundColor = backcolor;
 	element.style.overflow = "scroll";
@@ -41,14 +43,27 @@ function Console(element, name, forecolor, backcolor, fontsize, font){
 	mainstyle.innerText += "textarea." + name + "{color:" + forecolor + "; fontsize:" + fontsize + "; font-family:" + font + "; background-color:" + backcolor + "; resize: none; width:100%;}\n";
 	
 	var me = this;
+	var count = 0;
 	
 	this.WriteLine = function(message){
 		var p = document.createElement("p");
 		p.classList.add("consoleMessage");
 		p.classList.add(name);
+		p.setAttribute('index', count++);
 		p.innerText = message;
 		element.appendChild(p);
 		element.scrollTop = element.scrollHeight;
+		
+		var selector = '[console-script="' + element.getAttribute('console-script') + '"] > p[index]';
+		var cull = document.querySelectorAll(selector);
+		for (var i = 0; i < cull.length; i++) {
+			var index = cull[i].getAttribute('index');
+			var cutoff = count - limit;
+			
+			if (cutoff < limit ? false : index < cutoff && limit > 0) {
+				cull[i].remove();
+			}
+		}
 	};
 	this.ReadLine = function(callback){
 		var p = document.createElement("textarea");
