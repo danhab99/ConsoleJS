@@ -5,7 +5,7 @@ This simple script will allow you to create terminal-esq interfaces on your webp
 
 ### Step: 1
 Add this tag where the rest of your script tags are
-```<script href="https://rawgit.com/danhab99/ConsoleJS/master/console.min.js"></script>```
+```<script src="https://rawgit.com/danhab99/ConsoleJS/master/console.min.js"></script>```
 
 ### Step: 2
 Add an `isConsole` attribute to the `div` you want to make a console. **THIS WILL ONLY WORK ON `DIV`S***.
@@ -69,7 +69,7 @@ html:
 </head>
 
 <body>
-	<script src="console.js"></script>
+	<script src="https://rawgit.com/danhab99/ConsoleJS/master/console.min.js"></script>
 	<script src="js/console1.js"></script>
 	
 	<div isConsole console-Script="js/console1.js" console-Forecolor="#ffffff" style="width:300px; height:300px;"></div>
