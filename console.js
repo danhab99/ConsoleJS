@@ -88,6 +88,9 @@ function Console(element, name, forecolor, backcolor, fontsize, font, limit){
 		element.appendChild(p);
 	};
 	this.Beep = function(){beep();};
+this.Remove = function(i){
+ i = i > 0 ? i : count - i;
+ document.querySelector('[console-script="' + element.getAttribute('console-script') + '"] > p[index=' + i + ']').remove();
 };
 
 Element.prototype.remove = function() {
