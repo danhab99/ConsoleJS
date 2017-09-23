@@ -25,6 +25,7 @@ window.onload = function(){
 		var tt = t[t.length - 1].split(".")[0];
 		var ns = eval(tt);
 		
+		if (ns.hasOwnProperty("init")) { ns.init(); }
 		ns.main(new Console(e, tt, fc, bc, fs, f, l));
 	}
 };
@@ -88,10 +89,13 @@ function Console(element, name, forecolor, backcolor, fontsize, font, limit){
 		element.appendChild(p);
 	};
 	this.Beep = function(){beep();};
-this.Remove = function(i){
- i = i > 0 ? i : count - i;
- document.querySelector('[console-script="' + element.getAttribute('console-script') + '"] > p[index=' + i + ']').remove();
-};
+	this.Remove = function(i){
+		i = i > 0 ? i : count + i;
+		i = i === 0 ? i - 1 : i;
+		document.querySelector('[console-script="' + element.getAttribute('console-script') + '"] > p[index="' + i + '"]').remove();
+	};
+		
+}
 
 Element.prototype.remove = function() {
     this.parentElement.removeChild(this);

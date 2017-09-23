@@ -1,4 +1,7 @@
 var console1 = {
+	init: function(){
+		console.log("Console 1 init");
+	},
 	main: function(C){
 		var a;
 		var b;

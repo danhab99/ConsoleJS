@@ -5,17 +5,28 @@
   <meta charset="utf-8">
 
   <title>Console Test Bed</title>
+  
+  <style>
+  	[isConsole]{
+  		width:300px;
+  		height:300px;
+  	}
+  </style>
+  
 </head>
 
 <body>
-	<script src="../console.min.js"></script>
+	<script src="../console.js"></script>
 	<script src="js/console1.js"></script>
 	<script src="js/console2.js"></script>
+	<script src="js/console3.js"></script>
 	
-	<div isConsole console-Script="js/console1.js" console-Forecolor="#ffffff" style="width:300px; height:300px;"></div>
+	<div isConsole console-Script="js/console1.js" console-Forecolor="#ffffff"></div>
 	
 	<br />
 	
-	<div isConsole console-Script="js/console2.js" console-Forecolor="#ffc023" console-Limit="20" style="width:300px; height:300px;"></div>
+	<div isConsole console-Script="js/console2.js" console-Forecolor="#ffc023" console-Limit="20"></div>
+	
+	<div isConsole console-Script="js/console3.js" console-limit="20"></div>
 </body>
 </html>

@@ -36,6 +36,9 @@ Now we will prepare the script file. It must be a completly seperate .js file an
 
 ```javascript
   var [THE NAME OF THE FILE WITHOUT EXTENSION HERE] = {
+	init: function(){
+		//OPTIONAL, will run before main
+	}
 	main: function(C){
 		//YOUR CODE HERE
 	}
@@ -50,13 +53,23 @@ Now we will prepare the script file. It must be a completly seperate .js file an
 ## Script usage
 In the script file where it says `//YOUR CODE HERE` you will see right above it a big 'C'. You can change that to be 'console' if you'd like. It us used to access the (currently) three console commands.
 
-| Command   | Parameters        | Description                         |
-|-----------|-------------------|-------------------------------------|
-| WriteLine | message           | Prints something out to the console |
-| ReadLine  | callback(results) | Requests an input from the user     |
-| Beep      | none              | Will beep                           | Remove | index | If negative will remove the last message, if positive will remove a specific message (untested)
+| Command   | Parameters        | Description                                                                                     |
+|-----------|-------------------|-------------------------------------------------------------------------------------------------|
+| WriteLine | message           | Prints something out to the console                                                             |
+| ReadLine  | callback(results) | Requests an input from the user                                                                 |
+| Beep      | none              | Will beep                                                                                       |
+| Remove    | index             | If negative will remove the last message, if positive will remove a specific message (untested) |
 
 For example `C.WriteLine("Hello World")` will print hello world. All your code and logic should take place within the script files as external interaction is not ~~tested~~ reccomended.
+
+## Script methods
+There are different methods that will be run in order from a script file.
+
+| Method | Parameters  | Description                    |
+|--------|-------------|--------------------------------|
+| init   | none        | Runs first                     |
+| main   | The console | Dose all the console should do |
+
 
 ## Conclusion
 By the time you're done, you should have something like:
@@ -84,6 +97,9 @@ html:
 js:
 ```javascript
 var console1 = {
+	init: function(){
+		console.log("Ready");
+	}
 	main: function(C){
 		var a;
 		var b;
