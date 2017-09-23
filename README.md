@@ -14,7 +14,7 @@ Add an `isConsole` attribute to the `div` you want to make a console. **THIS WIL
 Include the console's script file in your group of script tags. Like so:
 
 ```html
-<script src="https://rawgit.com/danhab99/ConsoleJS/master/console.min.js"></script>
+<script src="https://rawgit.com/danhab99/ConsoleJS/master/console.js"></script>
 ```
 
 Then set the Console Div's `console-Script` attribute to the same source as the previous script tag. This will make this Console Div run this script. Don't worry, we'll prepare the script in a moment.
@@ -54,7 +54,7 @@ In the script file where it says `//YOUR CODE HERE` you will see right above it 
 |-----------|-------------------|-------------------------------------|
 | WriteLine | message           | Prints something out to the console |
 | ReadLine  | callback(results) | Requests an input from the user     |
-| Beep      | none              | Will beep                           |
+| Beep      | none              | Will beep                           | Remove | index | If negative will remove the last message, if positive will remove a specific message (untested)
 
 For example `C.WriteLine("Hello World")` will print hello world. All your code and logic should take place within the script files as external interaction is not ~~tested~~ reccomended.
 
