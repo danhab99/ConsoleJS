@@ -43,7 +43,7 @@ function Console(element, name, forecolor, backcolor, fontsize, font, limit){
 	mainstyle.innerText += "p." + name + "{color:" + forecolor + "; fontsize:" + fontsize + "; font-family:" + font + ";}\n";
 	mainstyle.innerText += "textarea." + name + "{color:" + forecolor + "; fontsize:" + fontsize + "; font-family:" + font + "; background-color:" + backcolor + "; resize: none; width:100%;}\n";
 	
-	var me = this;
+	var scope = this;
 	var count = 0;
 	
 	this.WriteLine = function(message){
@@ -81,7 +81,7 @@ function Console(element, name, forecolor, backcolor, fontsize, font, limit){
 			  // Enter pressed
 			  val = p.value;
 			  p.remove();
-			  me.WriteLine(val);
+			  scope.WriteLine(val);
 			  callback(val);
 			  return false;
 			}
@@ -94,7 +94,10 @@ function Console(element, name, forecolor, backcolor, fontsize, font, limit){
 		i = i === 0 ? i - 1 : i;
 		document.querySelector('[console-script="' + element.getAttribute('console-script') + '"] > p[index="' + i + '"]').remove();
 	};
-		
+	this.Ask = function(question, callback){
+		this.WriteLine(question);
+		this.ReadLine(callback);
+	}
 }
 
 Element.prototype.remove = function() {
