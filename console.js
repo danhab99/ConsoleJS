@@ -25,8 +25,24 @@ window.onload = function(){
 		var tt = t[t.length - 1].split(".")[0];
 		var ns = eval(tt);
 		
-		if (ns.hasOwnProperty("init")) { ns.init(); }
-		ns.main(new Console(e, tt, fc, bc, fs, f, l));
+		ns.init = ns.init || function(){ return 0; };
+		var con = new Console(e, tt, fc, bc, fs, f, l);
+		switch (ns.init()){
+			case 0: //Ready
+				ns.main(con);
+				break;
+			case 1: //Abort
+				con.WriteLine("Init aborted: Error 0x1");
+				break;
+			case 2: //Retry
+				con.WriteLine("Init retry: Error 0x2");
+				i--;
+				break;
+			default:
+				con.WriteLine("Init failed to respond: Error 0x-1");
+				console.log("Init must return a value to indicate its status, please refer to https://danhab99.github.io/ConsoleJS/ for more information");
+				break;
+		}
 	}
 };
 
@@ -102,7 +118,7 @@ function Console(element, name, forecolor, backcolor, fontsize, font, limit){
 
 Element.prototype.remove = function() {
     this.parentElement.removeChild(this);
-}
+};
 
 function beep() {
   (new

@@ -70,6 +70,16 @@ There are different methods that will be run in order from a script file.
 | init   | none        | Runs first                     |
 | main   | The console | Dose all the console should do |
 
+### Init return values
+
+If you do choose to use the `init` function you are required to return a value at the end of it. If you don't `init` will automatically return `0`;
+
+| Parameter | Description              |
+|-----------|--------------------------|
+| 0         | Ready: Will start `main` |
+| 1         | Abort: Will quit life    |
+| 2         | Retry: Will redo `init`  |
+
 
 ## Conclusion
 By the time you're done, you should have something like:
@@ -85,7 +95,7 @@ html:
 </head>
 
 <body>
-	<script src="https://rawgit.com/danhab99/ConsoleJS/master/console.min.js"></script>
+	<script src="https://rawgit.com/danhab99/ConsoleJS/master/console.js"></script>
 	<script src="js/console1.js"></script>
 	
 	<div isConsole console-Script="js/console1.js" console-Forecolor="#ffffff" style="width:300px; height:300px;"></div>
@@ -99,6 +109,7 @@ js:
 var console1 = {
 	init: function(){
 		console.log("Ready");
+		return 0;
 	}
 	main: function(C){
 		var a;
