@@ -17,19 +17,20 @@ Include the console's script file in your group of script tags. Like so:
 <script src="https://rawgit.com/danhab99/ConsoleJS/master/console.js"></script>
 ```
 
-Then set the Console Div's `console-Script` attribute to the same source as the previous script tag. This will make this Console Div run this script. Don't worry, we'll prepare the script in a moment.
+Then set the Console Div's `console-Script` attribute to the object containing the code. This will make this Console Div run this script. Don't worry, we'll prepare the script in a moment.
 
 ### Step: 2.2 (Optional)
 
 A Console Div has afew optional attributes:
 
-| Attribute         | Description                                            | Default        |
-|-------------------|--------------------------------------------------------|----------------|
-| console-Forecolor | Sets the color of the text                             | #ffffff        |
-| console-Backcolor | Sets the background                                    | #000000        |
-| console-FontSize  | Sets the font size                                     | 12             |
-| console-Font      | Sets the font family used                              | Verdana        |
-| console-Limit     | Defines a maximum number of lines allowed on a console | -1 (limitless) |
+| Attribute         | Description                                            | Default                  |
+|-------------------|--------------------------------------------------------|--------------------------|
+| console-Script    | Sets the script variable to use                        | **NO DEFAULT! REQUIRED** |
+| console-Forecolor | Sets the color of the text                             | #ffffff                  |
+| console-Backcolor | Sets the background                                    | #000000                  |
+| console-FontSize  | Sets the font size                                     | 12                       |
+| console-Font      | Sets the font family used                              | Verdana                  |
+| console-Limit     | Defines a maximum number of lines allowed on a console | -1 (limitless)           |
 
 ### Step: 3
 Now we will prepare the script file. It must be a completly seperate .js file and must look like this:
@@ -98,7 +99,7 @@ html:
 	<script src="https://rawgit.com/danhab99/ConsoleJS/master/console.js"></script>
 	<script src="js/console1.js"></script>
 	
-	<div isConsole console-Script="js/console1.js" console-Forecolor="#ffffff" style="width:300px; height:300px;"></div>
+	<div isConsole console-Script="console1" console-Forecolor="#ffffff" style="width:300px; height:300px;"></div>
 	
 </body>
 </html>

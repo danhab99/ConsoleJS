@@ -21,9 +21,7 @@ window.onload = function(){
 		var f = e.getAttribute('console-Font');
 		var l = e.getAttribute('console-Limit');
 		
-		var t = s.split("/");
-		var tt = t[t.length - 1].split(".")[0];
-		var ns = eval(tt);
+		var ns = eval(s);
 		
 		ns.init = ns.init || function(){ return 0; };
 		var con = new Console(e, tt, fc, bc, fs, f, l);
