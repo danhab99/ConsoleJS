@@ -24,7 +24,7 @@ window.onload = function(){
 		var ns = eval(s);
 		
 		ns.init = ns.init || function(){ return 0; };
-		var con = new Console(e, tt, fc, bc, fs, f, l);
+		var con = new Console(e, fc, bc, fs, f, l);
 		switch (ns.init()){
 			case 0: //Ready
 				ns.main(con);
@@ -44,7 +44,7 @@ window.onload = function(){
 	}
 };
 
-function Console(element, name, forecolor, backcolor, fontsize, font, limit){
+function Console(element, forecolor, backcolor, fontsize, font, limit){
 	forecolor = forecolor || "#ffffff";
 	backcolor = backcolor || "#000000";
 	fontsize = fontsize || 12;
