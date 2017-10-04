@@ -1,10 +1,12 @@
 var allConsoleElements;
+var allBeepElements;
 var mainstyle;
 
 window.onload = function(){
 	console.log("INIT");
 	
 	allConsoleElements = document.querySelectorAll("div[isConsole]");
+	allBeepElements = document.querySelectorAll("audio[consoleBeep]");
 	console.log(allConsoleElements);
 	
 	mainstyle = document.createElement("style");
@@ -23,7 +25,7 @@ window.onload = function(){
 		
 		var ns = eval(s);
 		
-		ns.init = ns.init || function(){ return 0; };
+		ns.init = ns.hasOwnProperty("init") ? ns.init : function(){ return 0; };
 		var con = new Console(e, s, fc, bc, fs, f, l);
 		switch (ns.init()){
 			case 0: //Ready
@@ -102,7 +104,19 @@ function Console(element, name, forecolor, backcolor, fontsize, font, limit){
 		};
 		element.appendChild(p);
 	};
-	this.Beep = function(){beep();};
+	this.Beep = function(e){
+		if (allBeepElements.length < 0 || e === null) {
+			beep();
+			return;
+		}
+		
+		for (var i = 0; i < allBeepElements.length; i++) {
+			if (allBeepElements[i].id === e) {
+				allBeepElements[i].load();
+				allBeepElements[i].play();
+			}
+		}
+	};
 	this.Remove = function(i){
 		i = i > 0 ? i : count + i;
 		i = i === 0 ? i - 1 : i;
