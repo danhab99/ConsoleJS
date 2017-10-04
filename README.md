@@ -138,3 +138,17 @@ var console1 = {
 	}
 };
 ```
+
+## Step 5 (Optional)
+
+I added in a feature where you can add your own custom beeping sounds. Just add in an audio tag of your choice and configure at as such:
+
+```html
+<audio consoleBeep id="NAMEOFBEEP"></audio>
+```
+
+And then in your javascript:
+
+```js
+C.Beep("NAMEOFBEEP");
+```
