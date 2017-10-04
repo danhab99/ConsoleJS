@@ -8,8 +8,11 @@
   
   <style>
   	[isConsole]{
-  		width:300px;
-  		height:300px;
+  		width: 300px;
+  		height: 300px;
+  	}
+  	audio{
+  		visibility: hidden;
   	}
   </style>
   
@@ -21,12 +24,14 @@
 	<script src="js/console2.js"></script>
 	<script src="js/console3.js"></script>
 	
-	<div isConsole console-Script="js/console1.js" console-Forecolor="#ffffff"></div>
+	<div isConsole console-Script="console1" console-Forecolor="#ffffff"></div>
 	
 	<br />
 	
-	<div isConsole console-Script="js/console2.js" console-Forecolor="#ffc023" console-Limit="20"></div>
+	<div isConsole console-Script="console2" console-Forecolor="#ffc023" console-Limit="20"></div>
 	
-	<div isConsole console-Script="js/console3.js" console-limit="20"></div>
+	<div isConsole console-Script="console3" console-limit="20"></div>
+	
+	<audio consoleBeep id="horse" src="https://www.w3schools.com/jsref/horse.mp3"></audio>
 </body>
 </html>

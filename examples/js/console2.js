@@ -5,7 +5,7 @@ var console2 = {
 			if (isPrime(i))
 			{
 				C.WriteLine(i);
-				C.Beep();
+				C.Beep("horse");
 			}
 			i++
 		},1);
