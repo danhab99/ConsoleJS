@@ -46,7 +46,7 @@ A Console Div has afew optional attributes:
 Now we will prepare the script file. It must be a completly seperate .js file and must look like this:
 
 ```javascript
-  var [THE NAME OF THE FILE WITHOUT EXTENSION HERE] = {
+  var [NAME OF THE SCRIPT HERE] = {
 	init: function(){
 		//OPTIONAL, will run before main
 	}
